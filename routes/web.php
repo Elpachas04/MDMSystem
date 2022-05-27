@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// path that will display the information from DB
+Route::get('/viewData', function () {
+    return view('viewData');
+});
