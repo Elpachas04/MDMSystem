@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PatientController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,12 @@ Route::get('/', function () {
 Route::get('/viewData', function () {
     return view('viewData');
 });
+
+// Route::post('/upload-content',[PatientController::class,'uploadContent'])->name('import.content');
+
+// $router->get('/import', 'ImportController@import');
+// $router->get('/importPatient', 'PatientController@import');
+
+Route::get('/import-form',[PatientController::class,'importForm']);
+
+Route::post('/import',[PatientController::class,'import'])->name('patient.import');
